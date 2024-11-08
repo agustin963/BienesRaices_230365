@@ -5,7 +5,7 @@ const formularioLogin = (request, response) =>  {
     })};
 
 const formularioRegister = (request, response) =>  {
-        response.render('auth/register', {
+        response.render('auth/createAccount', {
              page : "Crea una nueva cuenta..."
         })};
 
