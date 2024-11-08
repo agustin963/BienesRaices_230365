@@ -1,6 +1,6 @@
 import express from 'express';
-//import generalRouters from './routes/generalRouters.js'
-//import userRouters from './routes/userRouters.js'
+import generalRouters from './routes/generalRouters.js'
+import userRouters from './routes/userRouters.js'
 
 const app = express();
 // configuramos nuestro servidor web
@@ -11,6 +11,6 @@ app.listen(port , ()=> {
 });
 
 //Routing - ENRUTAMIENTO.
-//app.use('/',generalRouters);
-//app.use('/usuario/',userRouters);
-//Probamos las rutas para poder presentar mensajes al usuario a traes del navegador
+app.use('/',generalRouters);
+app.use('/usuario/',userRouters);
+//Probamos las rutas para poder presentar mensajes al us
