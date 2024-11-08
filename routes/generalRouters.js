@@ -9,7 +9,7 @@ router.get("/QuienSoy",function(req,res){
     res.json({"Estudiante" : "Jose Agustin Jimenez Castillo ",
         "Grado": "4",
         "Grupo": "B",
-        "Carrera" : "Desarrollo de Sostware Multiplataforma "
+        "Carrera" : "DSM"
 
 });
 
