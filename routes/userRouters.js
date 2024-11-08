@@ -52,7 +52,9 @@ router.delete("/deleteUser/:email",function(request,response){
 // Exportar el router para poder usarlo en el archivo principaL
 
 
-
+ //router.get("/login", formularioLogin /*middleware*/ )
+ //router.get("/createAccount", formularioRegister)
+ ///router.get("/passwordRecovery", formularioPasswordRecovery)
 
 
 
