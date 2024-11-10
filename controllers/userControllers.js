@@ -11,7 +11,7 @@ const formularioRegister = (request, response) =>  {
 
 const formularioPasswordRecovery = (request, response) =>  {
     response.render('auth/passwordRecovery', {
-            page : "Recuperación de Contraseña"
+            page : "Recupera tu Contraseña"
      })};
      
 export {formularioLogin, formularioRegister, formularioPasswordRecovery}
