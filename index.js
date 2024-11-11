@@ -1,7 +1,7 @@
 import express from 'express';
 import generalRouters from './routes/generalRouters.js'
 import userRouters from './routes/userRouters.js'
-
+import db from './config/db.js'
 const app = express();
 // configuramos nuestro servidor web
 // Habilitar pug
@@ -9,7 +9,14 @@ app.set('view engine', 'pug')
 app.set('views', './views')
 // Carpeta publica 
 app.use(express.static('public'))
+//Conexion a la base de datos 
+try{
+   await db.authenticate();
+   console.log('Conexion correcta a la Base de Datos')
+}catch(error){
+    console.log(error)
 
+}
 
 const port = 3000;
 app.listen(port , ()=> {
