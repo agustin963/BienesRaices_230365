@@ -1,7 +1,7 @@
 import express from 'express';
 import generalRouters from './routes/generalRouters.js'
 import userRouters from './routes/userRouters.js'
-import db from './config/db.js'
+import db from './db/config.js'
 const app = express();
 // configuramos nuestro servidor web
 // Habilitar pug

@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize'
-import dontenv from 'dotenv'
+import dontenv, { config } from 'dotenv'
 dontenv.config({path:'.env'})
 //import { noBoolOperatorAliases } from 'sequelize/lib/utils/deprecations';
 
