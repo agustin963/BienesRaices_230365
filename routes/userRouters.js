@@ -58,6 +58,7 @@ router.delete("/deleteUser/:email",function(request,response){
 
  router.get("/createAccount", formularioRegister)
  router.post("/createAccount", CreateNewUser)
+ //router.get("/confirmToken", confirm)
 
 
  router.get("/passwordRecovery", formularioPasswordRecovery)

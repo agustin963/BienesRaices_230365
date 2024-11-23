@@ -2,7 +2,8 @@
 import { request,response } from 'express';
 import{check,validationResult} from 'express-validator'
 import User from '../models/User.js'
-
+import { genereId } from '../models/helpers/tokens.js';
+import {emailAfterRegistrer} from '../models/helpers/email.js'
 
 const formularioLogin = (request, response) =>  {
     response.render('auth/login', {
@@ -74,11 +75,24 @@ const CreateNewUser = async (request,response) => {
         name: nombre_usuario,  // Use nombre_usuario here
         email: correo_usuario,
         password: password_usuario,
-        token: generatetId()   // Generate token here
+        token: genereId()   // Generate token here
     });
 
-
-  }
+      ///Enviar el correo de confirmación
+      await emailAfterRegistrer({
+       name: newUser.name,
+        email: newUser.email,
+       
+        token: newUser.token
+    });
+     // Mostrar mensaje de confirmación
+     response.render('templates/message', {
+        page: 'Cuenta creada satisfactoriamente.',
+        msg: `Hemos enviado un correo a: ${correo_usuario}, para la confirmación de su cuenta.` 
+        });
+    }
+  
+  
         
  
      
