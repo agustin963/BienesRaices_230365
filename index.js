@@ -3,7 +3,15 @@ import generalRouters from './routes/generalRouters.js'
 import userRouters from './routes/userRouters.js'
 import db from './db/config.js'
 const app = express();
+
+//Habilitar lectura de datos formularios 
+app.use(express.urlencoded({extended:true}))
+
+
 // configuramos nuestro servidor web
+
+
+
 // Habilitar pug
 app.set('view engine', 'pug')
 app.set('views', './views')
@@ -12,6 +20,7 @@ app.use(express.static('public'))
 //Conexion a la base de datos 
 try{
    await db.authenticate();
+   db.sync()
    console.log('Conexion correcta a la Base de Datos')
 }catch(error){
     console.log(error)
