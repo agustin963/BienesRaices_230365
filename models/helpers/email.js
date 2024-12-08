@@ -16,9 +16,9 @@ const emailAfterRegistrer = async(newUserData) =>{
 
     // Enviar el email 
     await transport.sendMail({
-        from: 'bienes_raices_230809@example.com', // Asegúrate de usar una dirección de correo válida
+        from: 'bienes_raices_230365@utxicotepec.edu.mx', // Asegúrate de usar una dirección de correo válida
         to: email,
-        subject: 'Bienvenido/a al BienesRaices-230809',
+        subject: 'Bienvenido/a al BienesRaices-230365',
         text: 'Ya casi puedes usar nuestra plataforma, solo falta confirmar tu cuenta.',
         html: `
             <html lang="es">
@@ -95,9 +95,10 @@ const emailAfterRegistrer = async(newUserData) =>{
                     <div class="content">
                         <h2>Encuentra Tu Hogar Ideal</h2>
                         <p>Estimado/a ${name},</p>
-                        <p>Bienvenido a Bienes Raices , el mejor lugar psrs encontsr un hogar  </p>
+                        <p>Bienvenido a Bienes Raices , el mejor lugar para encontrar un hogar</p>
+                        <
                         <p>Como ultimo paso confirma que eres tu:</p>
-                        <a href=" " class="cta-button">Confirma tu cuenta</a>
+                        <a href="${process.env.BACKEND_URL}:${process.env.BACKEND_PORT}/auth/confirmToken/${token}  "  class="cta-button">Confirma tu cuenta</a>
                     </div>
                     <div class="footer">
                         <p>© 2024 Bienes Raíces 230365. Todos los derechos reservados.</p>
